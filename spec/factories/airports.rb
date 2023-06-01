@@ -1,6 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :airport do
-    name "JJC Airport"
-    state "Lagos"
+    name { "JJC Airport" }
+    state { "Lagos" }
   end
 end
