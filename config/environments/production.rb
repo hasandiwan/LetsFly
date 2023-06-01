@@ -12,7 +12,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -47,6 +47,7 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and
   # use secure cookies.
   # config.force_ssl = true
+  config.ssl_options = { hsts: { subdomains: true } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -68,6 +69,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to
   # raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_caching = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -81,4 +83,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  # belongs_to will now trigger a validation error by default if the association is not present.
+  config.active_record.belongs_to_required_by_default = true
 end
