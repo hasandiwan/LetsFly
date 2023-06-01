@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "2.7.8"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "4.2.4"
+gem "rails", "5.0.7"
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
@@ -27,7 +27,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 # Use materialize css
 gem "materialize-sass"
 # Use font awesome
-gem "font-awesome-sass"
+gem "font-awesome-sass", '~> 4.4.0'
 
 gem "faker"
 
@@ -46,16 +46,16 @@ gem "coveralls", require: false
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
 
+# Use sqlite3 as the database for Active Record
+gem "sqlite3"
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger
   # console
   gem 'pry-byebug'
-  # Use sqlite3 as the database for Active Record
-  gem "sqlite3"
   gem "rspec-rails", "~> 3.0"
   gem "capybara"
   gem "selenium-webdriver"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "shoulda-matchers", "~> 3.0.1"
   gem "letter_opener"
   gem "pry-rails"
@@ -81,4 +81,5 @@ group :production do
   gem "puma"
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'bigdecimal', '1.3.5'
