@@ -1,4 +1,4 @@
-class Airport < ActiveRecord::Base
+class Airport < ApplicationRecord
   has_many :flights, foreign_key: :origin_airport_id
 
   validates :name, presence: true

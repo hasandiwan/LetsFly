@@ -1,8 +1,8 @@
-class Passenger < ActiveRecord::Base
+class Passenger < ApplicationRecord
   belongs_to :booking
 
   validates :name, presence: true
   validates :email, format: {
-    with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/
-  }
+            with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/,
+          }
 end
